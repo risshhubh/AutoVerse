@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-pastel-light: #DACAA4;
+  --color-pastel-blue: #1B3C53;
+  --color-pastel-sky: #456882;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-pastel-light);
+    color: var(--color-pastel-blue);
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .car-card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300;
+  }
+
+  .filter-button {
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-300;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Line clamp utility - Tailwind 4 has this built-in usually, but keeping for safety */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth animations */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Responsive Logo Scroll Animation */
+.responsive-logo-container {
+  /* Default (Desktop) Start/End Values */
+  --start-top: 45%;
+  --end-top: 1.5rem;
+  --start-left: 25%;
+  /* Left align for desktop split view */
+  --end-left: 2rem;
+
+  --start-scale: 1;
+  --end-scale: 0.25;
+
+  position: fixed;
+  z-index: 30;
+  transform-origin: top left;
+  will-change: transform, top, left;
+
+  /* Interpolation Logic */
+  top: calc(var(--start-top) * (1 - var(--scroll-p)) + var(--end-top) * var(--scroll-p));
+  left: calc(var(--start-left) * (1 - var(--scroll-p)) + var(--end-left) * var(--scroll-p));
+
+  transform:
+    translate(calc(-50% * (1 - var(--scroll-p))),
+      calc(-50% * (1 - var(--scroll-p)))) scale(calc(var(--start-scale) * (1 - var(--scroll-p)) + var(--end-scale) * var(--scroll-p)));
+
+  color: #1B3C53;
+  /* Consistent color */
+}
+
+/* Tablet & Mobile Overrides */
+@media (max-width: 1023px) {
+  .responsive-logo-container {
+    --start-top: 40%;
+    --start-left: 50%;
+    /* Keep centered on mobile */
+    --end-left: 1rem;
+  }
+}
