@@ -6,7 +6,7 @@
     "devCommand": "npm run dev",
     "installCommand": "npm install --legacy-peer-deps",
     "env": {
-        "NODE_OPTIONS": "--max-old-space-size=6144",
+        "NODE_OPTIONS": "--max-old-space-size=5120",
         "UV_THREADPOOL_SIZE": "1"
     }
 }

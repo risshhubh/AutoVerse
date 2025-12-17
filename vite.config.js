@@ -18,27 +18,16 @@ export default defineConfig({
   },
 
   build: {
-    target: 'es2020',
-    minify: 'esbuild',
+    target: 'esnext',
+    minify: false, // temporarily disable minification to save memory
     sourcemap: false,
     modulePreload: false,
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 0,
 
     rollupOptions: {
-      maxParallelFileOps: 2,
       output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('three') || id.includes('@react-three')) {
-              return 'three-vendor';
-            }
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('framer-motion')) {
-              return 'react-vendor';
-            }
-            return 'vendor';
-          }
-        }
+        // Default chunking
       }
     },
 
