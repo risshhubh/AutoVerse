@@ -19,17 +19,15 @@ export default defineConfig({
 
   build: {
     target: 'esnext',
-    minify: 'esbuild',
+    minify: false,
     sourcemap: false,
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
+    assetsInlineLimit: 0,
 
     rollupOptions: {
+      maxParallelFileOps: 1,
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
-          'vendor-anim': ['framer-motion', 'gsap']
-        }
+        // Default chunking
       }
     }
   }
