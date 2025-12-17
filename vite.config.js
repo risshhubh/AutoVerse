@@ -30,21 +30,13 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // Ultra-aggressive splitting for memory efficiency
-            if (id.includes('three')) {
-              if (id.includes('core')) return 'three-core'
-              if (id.includes('examples') || id.includes('jsm')) return 'three-extras'
-              return 'three-misc'
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three-vendor';
             }
-            if (id.includes('@react-three/fiber')) return 'r3f-core'
-            if (id.includes('@react-three/drei')) return 'r3f-drei'
-            if (id.includes('framer-motion')) return 'framer'
-            if (id.includes('gsap')) return 'gsap'
-            if (id.includes('lenis')) return 'lenis'
-            if (id.includes('react') && id.includes('dom')) return 'react-dom'
-            if (id.includes('react')) return 'react-core'
-            if (id.includes('lucide-react')) return 'icons'
-            return 'vendor'
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom') || id.includes('framer-motion')) {
+              return 'react-vendor';
+            }
+            return 'vendor';
           }
         }
       }
