@@ -8,7 +8,10 @@ import StatsSection from './StatsSection';
 
 import StatusHeader from './StatusHeader';
 
+import { useNavigate } from 'react-router-dom';
+
 const Homepage = () => {
+    const navigate = useNavigate();
     const { scrollY } = useScroll();
     const scrollProgress = useTransform(scrollY, [0, 600], [0, 1]);
 
@@ -123,9 +126,9 @@ const Homepage = () => {
                             transition={{ ...SMOOTH_TRANSITION, delay: 1.5 }}
                             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
                         >
-                            <motion.a
-                                href="#experience"
-                                className="group relative px-10 py-4 bg-pastel-blue text-pastel-light font-semibold tracking-wide overflow-hidden"
+                            <motion.button
+                                onClick={() => navigate('/body-styles')}
+                                className="group relative px-10 py-4 bg-pastel-blue text-pastel-light font-semibold tracking-wide overflow-hidden cursor-pointer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -136,16 +139,16 @@ const Homepage = () => {
                                     whileHover={{ x: 0 }}
                                     transition={{ duration: 0.3 }}
                                 />
-                            </motion.a>
+                            </motion.button>
 
-                            <motion.a
-                                href="#contact"
-                                className="px-10 py-4 border-2 border-pastel-blue text-pastel-blue font-semibold tracking-wide hover:bg-pastel-blue/5 transition-colors"
+                            <motion.button
+                                onClick={() => navigate('/contact')}
+                                className="px-10 py-4 border-2 border-pastel-blue text-pastel-blue font-semibold tracking-wide hover:bg-pastel-blue/5 transition-colors cursor-pointer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
                             >
                                 Get in Touch
-                            </motion.a>
+                            </motion.button>
                         </motion.div>
 
 
