@@ -18,8 +18,8 @@ export default defineConfig({
   },
 
   build: {
-    target: 'esnext',
-    minify: false, // temporarily disable minification to save memory
+    target: 'es2020',
+    minify: 'esbuild',
     sourcemap: false,
     modulePreload: false,
     chunkSizeWarningLimit: 1000,
