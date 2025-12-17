@@ -13,17 +13,10 @@ export default defineConfig({
     }
   },
   build: {
-    target: 'esnext',
+    target: 'es2020',
     minify: 'esbuild',
     sourcemap: false,
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion'],
-          three: ['three', '@react-three/fiber', '@react-three/drei']
-        }
-      }
-    }
+    chunkSizeWarningLimit: 1000
+    // rollupOptions removed to allow default splitting and avoid memory issues with large chunks
   }
 })
