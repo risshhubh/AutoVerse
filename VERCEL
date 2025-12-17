@@ -1,0 +1,67 @@
+# Vercel Deployment Guide for AutoVerse
+
+## Quick Deployment Steps
+
+### 1. Install Vercel CLI (Optional)
+```bash
+npm i -g vercel
+```
+
+### 2. Deploy via Vercel Dashboard
+1. Go to [vercel.com](https://vercel.com)
+2. Click "New Project"
+3. Import your GitHub repository: `risshhubh/AutoVerse`
+4. Vercel will auto-detect it's a Vite project
+5. Click "Deploy"
+
+### 3. Deploy via CLI
+```bash
+# In your project directory
+vercel
+
+# Follow the prompts:
+# - Set up and deploy? Yes
+# - Which scope? (choose your account)
+# - Link to existing project? No
+# - Project name: autoverse (or your choice)
+# - Directory: ./
+```
+
+## Configuration Details
+
+### Files Created/Modified:
+- ✅ `vercel.json` - Vercel configuration
+- ✅ `.vercelignore` - Excludes unnecessary files from deployment
+- ✅ `index.html` - Added SEO meta tags and performance optimizations
+- ✅ `package.json` - Removed Node.js engine restriction (Vercel handles this)
+- ✅ Removed `render.yaml` - No longer needed
+
+### Build Settings (Auto-detected):
+- Framework: Vite
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: `npm install`
+
+### Environment Variables:
+No environment variables needed for basic deployment.
+
+## Post-Deployment
+
+After successful deployment:
+1. Your site will be available at: `https://your-project-name.vercel.app`
+2. Custom domain can be added in Vercel dashboard
+3. Automatic deployments on every git push to main branch
+
+## Performance Optimizations Included:
+- ✅ Code splitting handled by Vite
+- ✅ Asset optimization
+- ✅ Gzip compression
+- ✅ SEO meta tags
+- ✅ Performance preloading
+
+## Troubleshooting
+
+If you encounter issues:
+1. Check the deployment logs in Vercel dashboard
+2. Ensure all dependencies are compatible with Node.js 18+ (which Vercel uses)
+3. Verify the build works locally with `npm run build`
