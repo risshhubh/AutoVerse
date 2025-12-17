@@ -94,8 +94,8 @@ const VehicleDetails = () => {
                     <button
                         onClick={() => car && toggleWishlist(car.id)}
                         className={`p-3 rounded-full border transition-colors ${car && isInWishlist(car.id)
-                                ? 'bg-red-50 border-red-200 text-red-500'
-                                : 'border-pastel-blue/20 text-pastel-blue/70 hover:bg-pastel-blue/5 hover:text-pastel-blue'
+                            ? 'bg-red-50 border-red-200 text-red-500'
+                            : 'border-pastel-blue/20 text-pastel-blue/70 hover:bg-pastel-blue/5 hover:text-pastel-blue'
                             }`}
                         aria-label="Add to Wishlist"
                     >

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { SMOOTH_TRANSITION } from '../animationConstants';
-import ModelViewer from './ModelViewer'
+import ModelViewer from './ModelViewer';
 import ExperienceSection from './ExperienceSection'
 import BrandMarquee from './BrandMarquee';
 import StatsSection from './StatsSection';

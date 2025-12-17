@@ -14,25 +14,23 @@ export default defineConfig({
   },
 
   optimizeDeps: {
-    exclude: ['three', '@react-three/fiber', '@react-three/drei']
+    include: ['three', '@react-three/fiber', '@react-three/drei']
   },
 
   build: {
-    target: 'es2020',
+    target: 'esnext',
     minify: 'esbuild',
     sourcemap: false,
-    modulePreload: false,
     chunkSizeWarningLimit: 1000,
-    assetsInlineLimit: 0,
 
     rollupOptions: {
       output: {
-        // Default chunking
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'vendor-anim': ['framer-motion', 'gsap']
+        }
       }
-    },
-
-    commonjsOptions: {
-      transformMixedEsModules: false
     }
   }
 })
