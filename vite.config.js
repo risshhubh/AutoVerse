@@ -19,11 +19,29 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'three': ['three'],
-          'react-three': ['@react-three/fiber', '@react-three/drei'],
-          'vendor': ['react', 'react-dom'],
-          'animations': ['framer-motion', 'gsap', 'lenis']
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') && !id.includes('examples') && !id.includes('jsm')) {
+              return 'three-core';
+            }
+            if (id.includes('three') && (id.includes('examples') || id.includes('jsm'))) {
+              return 'three-extras';
+            }
+            if (id.includes('@react-three')) {
+              return 'react-three';
+            }
+            if (id.includes('framer-motion') || id.includes('gsap') || id.includes('lenis')) {
+              return 'animations';
+            }
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            // Split other large dependencies
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            return 'vendor';
+          }
         }
       }
     },
