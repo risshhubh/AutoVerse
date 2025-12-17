@@ -2,7 +2,7 @@ services:
   - type: web
     name: autoverse
     env: static
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && export NODE_OPTIONS=--max-old-space-size=4096 && npm run build
     staticPublishPath: ./dist
     routes:
       - type: rewrite
