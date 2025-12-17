@@ -1,15 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap');
-@import "tailwindcss";
-
-@theme {
-  --color-pastel-light: #DACAA4;
-  --color-pastel-blue: #1B3C53;
-  --color-pastel-sky: #456882;
-
-  --font-cinzel: 'Cinzel', serif;
-  --font-playfair: 'Playfair Display', serif;
-  --font-sans: 'Outfit', system-ui, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   html {
