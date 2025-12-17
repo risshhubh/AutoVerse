@@ -33,7 +33,7 @@ export const cars = [
     category: 'suv',
     price: 815000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/2023_Tata_Nexon_XZA%2B_front_view.jpg',
+    image: '/car-renders/nexon_showroom.png',
     specs: { engine: '1.2L Turbo', mpg: '17 kmpl', transmission: 'AMT/DCA', drivetrain: 'FWD' },
     description: 'India\'s safest compact SUV with bold styling and advanced technology.'
   },
@@ -66,7 +66,7 @@ export const cars = [
     category: 'hatchback',
     price: 665000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Tata_Altroz_Genf_2019_1Y7A5778.jpg',
+    image: '/car-renders/altroz_showroom.png',
     specs: { engine: '1.5L Diesel', mpg: '25 kmpl', transmission: 'Manual', drivetrain: 'FWD' },
     description: 'Gold standard of safety with premium design and features.'
   },
@@ -90,7 +90,7 @@ export const cars = [
     category: 'suv',
     price: 1403000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/2021_Mahindra_XUV700_2.2_AX7_%28India%29_front_view.png',
+    image: '/car-renders/xuv700_showroom.png',
     specs: { engine: '2.2L mHawk', mpg: '15 kmpl', transmission: 'Auto', drivetrain: 'AWD' },
     description: 'Tech-loaded flagship SUV with ADAS and commanding road presence.'
   },
@@ -123,7 +123,7 @@ export const cars = [
     category: 'suv',
     price: 1359000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1bcfb0?q=80&w=2070&auto=format&fit=crop', // Classic boxy SUV look
+    image: '/car-renders/scorpio_classic_showroom.png', // Classic boxy SUV look
     specs: { engine: '2.2L mHawk', mpg: '15 kmpl', transmission: 'Manual', drivetrain: 'RWD' },
     description: 'The original legend, refined. Built to last generations.'
   },
@@ -134,7 +134,7 @@ export const cars = [
     category: 'suv',
     price: 799000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1593055491718-64b1f69207e9?q=80&w=2070&auto=format&fit=crop', // Compact SUV look
+    image: '/car-renders/xuv300_showroom.png', // Compact SUV look
     specs: { engine: '1.2L Turbo', mpg: '17 kmpl', transmission: 'Auto', drivetrain: 'FWD' },
     description: 'Safety and performance in a compact, thrilling package.'
   },
@@ -169,7 +169,7 @@ export const cars = [
     category: 'suv',
     price: 834000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1627454820574-fb400f04db66?q=80&w=2072&auto=format&fit=crop', // Compact SUV
+    image: '/car-renders/brezza_showroom.png', // Compact SUV
     specs: { engine: '1.5L Smart Hybrid', mpg: '20 kmpl', transmission: 'Auto', drivetrain: 'FWD' },
     description: 'Hot and techy compact SUV for the urban jungle.'
   },
@@ -180,7 +180,7 @@ export const cars = [
     category: 'suv',
     price: 1070000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2070&auto=format&fit=crop', // Premium SUV look
+    image: '/car-renders/grand_vitara_showroom.png', // Premium SUV look
     specs: { engine: '1.5L Hybrid', mpg: '27.9 kmpl', transmission: 'e-CVT', drivetrain: 'AWD' },
     description: 'A new breed of SUVs with intelligent electric hybrid technology.'
   },
@@ -204,7 +204,7 @@ export const cars = [
     category: 'suv',
     price: 1100000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/2/21/2024_Hyundai_Creta_1.5_MPi_SX%28O%29_%28India%29_front_view.png',
+    image: '/car-renders/creta_showroom.png',
     specs: { engine: '1.5L Diesel', mpg: '21 kmpl', transmission: 'Auto', drivetrain: 'FWD' },
     description: 'The ultimate SUV for Indian families, refined and feature-rich.'
   },
@@ -226,7 +226,7 @@ export const cars = [
     category: 'hatchback',
     price: 704000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1605218427339-959c8ad4bf8d?q=80&w=2148&auto=format&fit=crop',
+    image: '/car-renders/i20_showroom.png',
     specs: { engine: '1.2L Kappa', mpg: '20 kmpl', transmission: 'IVT', drivetrain: 'FWD' },
     description: 'The premium hatchback that sets the design benchmarks.'
   },
@@ -237,7 +237,7 @@ export const cars = [
     category: 'suv',
     price: 794000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=2070&auto=format&fit=crop', // Compact SUV
+    image: '/car-renders/venue_showroom.png', // Compact SUV
     specs: { engine: '1.0L Turbo', mpg: '18 kmpl', transmission: 'DCT', drivetrain: 'FWD' },
     description: 'Compact, connected, and perfect for the modern urban explorer.'
   },
@@ -248,7 +248,7 @@ export const cars = [
     category: 'electric',
     price: 4605000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop',
+    image: '/car-renders/ioniq5_showroom.png',
     specs: { engine: 'Electric', mpg: '631 km Range', transmission: 'Auto', drivetrain: 'RWD' },
     description: 'World Car of the Year, defining the retro-futuristic electric future.'
   },
@@ -272,7 +272,7 @@ export const cars = [
     category: 'suv', // MPV classified as SUV often in filtering or we can add Multi-purpose
     price: 1977000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Toyota_Kijang_Innova_Zenix_HEV_G_%28Indonesia%29_side_view.png',
+    image: '/car-renders/innova_hycross_showroom.png',
     specs: { engine: '2.0L Hybrid', mpg: '23.2 kmpl', transmission: 'e-CVT', drivetrain: 'FWD' },
     description: 'Supreme comfort and hybrid efficiency in a versatile MPV package.'
   },
@@ -294,7 +294,7 @@ export const cars = [
     category: 'hatchback',
     price: 686000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1616788494672-ec7d22b8296a?q=80&w=2070&auto=format&fit=crop',
+    image: '/car-renders/glanza_showroom.png',
     specs: { engine: '1.2L Petrol', mpg: '22.3 kmpl', transmission: 'AMT', drivetrain: 'FWD' },
     description: 'Toyota reliability in a sporty premium hatchback package.'
   },
@@ -305,7 +305,7 @@ export const cars = [
     category: 'suv',
     price: 1114000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=2070&auto=format&fit=crop', // Placeholder SUV
+    image: '/car-renders/hyryder_showroom.png', // Placeholder SUV
     specs: { engine: '1.5L Hybrid', mpg: '27.9 kmpl', transmission: 'e-CVT', drivetrain: 'AWD option' },
     description: 'A robust SUV designed for the sustainable urban lifestyle.'
   },
@@ -319,7 +319,7 @@ export const cars = [
     category: 'sedan',
     price: 1180000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/2023_Honda_City_RS.jpg',
+    image: '/car-renders/city_showroom.png',
     specs: { engine: '1.5L i-VTEC', mpg: '18 kmpl', transmission: 'CVT', drivetrain: 'FWD' },
     description: 'The benchmark of mid-size sedans in India, offering supreme comfort.'
   },
@@ -330,7 +330,7 @@ export const cars = [
     category: 'suv',
     price: 1150000,
     year: 2024,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/9/90/2023_Honda_Elevate_VX_%28India%29_front_view.jpg',
+    image: '/car-renders/elevate_showroom.png',
     specs: { engine: '1.5L i-VTEC', mpg: '16.9 kmpl', transmission: 'CVT', drivetrain: 'FWD' },
     description: 'Boldly stylish SUV with best-in-class comfort and visibility.'
   },
@@ -341,7 +341,7 @@ export const cars = [
     category: 'sedan',
     price: 719000,
     year: 2024,
-    image: 'https://images.unsplash.com/photo-1549524584-118833983272?q=80&w=1974&auto=format&fit=crop', // Compact Sedan
+    image: '/car-renders/amaze_showroom.png', // Compact Sedan
     specs: { engine: '1.2L i-VTEC', mpg: '18.6 kmpl', transmission: 'CVT', drivetrain: 'FWD' },
     description: 'Big on space and comfort, the compact sedan for the family.'
   },

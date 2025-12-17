@@ -13,7 +13,7 @@ const getCarModel = (car) => {
     const name = car.name.toLowerCase();
     const brand = car.brand.toLowerCase();
 
-    if (name.includes('thar')) return '/thar_draco.glb';
+    if (name.includes('thar')) return '/thar.glb';
     if (name.includes('harrier')) return '/harrier.glb';
     if (name.includes('safari')) return '/safari.glb';
     if (name.includes('scorpio')) return '/scorpion.glb'; // scorpion for Scorpio N

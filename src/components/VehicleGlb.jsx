@@ -12,6 +12,36 @@ import {
     Shadow
 } from '@react-three/drei';
 
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        console.error("3D Model Error:", error, errorInfo);
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <Html center>
+                    <div className="bg-red-500/10 backdrop-blur-md border border-red-500/30 text-red-200 px-6 py-4 rounded-xl flex flex-col items-center">
+                        <div className="text-xl font-bold mb-1">3D Unavailable</div>
+                        <div className="text-xs uppercase tracking-widest opacity-70">Model file missing or corrupted</div>
+                    </div>
+                </Html>
+            );
+        }
+
+        return this.props.children;
+    }
+}
+
 /* ---------------- Loader ---------------- */
 
 const Loader = () => {
@@ -121,29 +151,31 @@ const VehicleGlb = ({ modelPath = '/thar.glb' }) => {
 
                 {/* Model */}
                 <group position={[0, -0.45, 0]}>
-                    <Suspense fallback={<Loader />}>
-                        <CarModel path={modelPath} setZoomRange={setZoomRange} />
+                    <ErrorBoundary>
+                        <Suspense fallback={<Loader />}>
+                            <CarModel path={modelPath} setZoomRange={setZoomRange} />
 
-                        {/* Base "Fill" Shadow (Oval) */}
-                        <Shadow
-                            position={[0, -0.78, 0]}
-                            scale={[2.2, 4.5]}
-                            color="black"
-                            colorStop={0}
-                            opacity={0.8}
-                        />
+                            {/* Base "Fill" Shadow (Oval) */}
+                            <Shadow
+                                position={[0, -0.78, 0]}
+                                scale={[2.2, 4.5]}
+                                color="black"
+                                colorStop={0}
+                                opacity={0.8}
+                            />
 
-                        {/* Detailed Contact Shadows for Wheels */}
-                        <ContactShadows
-                            position={[0, -0.78, 0]}
-                            opacity={0.8}
-                            scale={14}
-                            blur={2}
-                            far={1.5}
-                            resolution={1024}
-                            color="#000000"
-                        />
-                    </Suspense>
+                            {/* Detailed Contact Shadows for Wheels */}
+                            <ContactShadows
+                                position={[0, -0.78, 0]}
+                                opacity={0.8}
+                                scale={14}
+                                blur={2}
+                                far={1.5}
+                                resolution={1024}
+                                color="#000000"
+                            />
+                        </Suspense>
+                    </ErrorBoundary>
                 </group>
 
                 {/* Controls */}
