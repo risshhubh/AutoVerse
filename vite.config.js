@@ -16,7 +16,19 @@ export default defineConfig({
     target: 'es2020',
     minify: 'esbuild',
     sourcemap: false,
-    chunkSizeWarningLimit: 1000
-    // rollupOptions removed to allow default splitting and avoid memory issues with large chunks
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'react-three': ['@react-three/fiber', '@react-three/drei'],
+          'vendor': ['react', 'react-dom'],
+          'animations': ['framer-motion', 'gsap', 'lenis']
+        }
+      }
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
   }
 })
