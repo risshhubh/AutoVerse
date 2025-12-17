@@ -1,8 +1,22 @@
-import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
+    const location = useLocation();
+
+    const handleScrollToExperience = (e) => {
+        if (location.pathname !== '/') {
+            // Let the Link handle navigation to home first
+            return;
+        }
+        e.preventDefault();
+        const element = document.getElementById('experience');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
 
     return (
         <footer className="relative bg-[#1B3C53] text-white pt-20 pb-10 overflow-hidden">
@@ -43,32 +57,41 @@ const Footer = () => {
                     <div className="hidden md:block md:col-span-2"></div>
 
                     {/* Links Columns */}
+                    {/* Links Columns */}
                     <div className="md:col-span-2">
                         <h3 className="font-bold text-lg mb-6 tracking-wide">Explore</h3>
                         <ul className="space-y-4 text-white/60 text-sm">
-                            <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
-                            <li><a href="/body-styles" className="hover:text-white transition-colors">Body Styles</a></li>
-                            <li><a href="/brands" className="hover:text-white transition-colors">Brands</a></li>
-                            <li><a href="/#experience" className="hover:text-white transition-colors">Experience</a></li>
+                            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
+                            <li><Link to="/body-styles" className="hover:text-white transition-colors">Body Styles</Link></li>
+                            <li><Link to="/brands" className="hover:text-white transition-colors">Brands</Link></li>
+                            <li>
+                                <Link
+                                    to="/#experience"
+                                    onClick={handleScrollToExperience}
+                                    className="hover:text-white transition-colors"
+                                >
+                                    Experience
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
                     <div className="md:col-span-2">
                         <h3 className="font-bold text-lg mb-6 tracking-wide">Company</h3>
                         <ul className="space-y-4 text-white/60 text-sm">
-                            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Press</a></li>
-                            <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                            <li><span className="cursor-not-allowed opacity-50">About Us</span></li>
+                            <li><span className="cursor-not-allowed opacity-50">Careers</span></li>
+                            <li><span className="cursor-not-allowed opacity-50">Press</span></li>
+                            <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
                     <div className="md:col-span-2">
                         <h3 className="font-bold text-lg mb-6 tracking-wide">Legal</h3>
                         <ul className="space-y-4 text-white/60 text-sm">
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
+                            <li><span className="cursor-not-allowed opacity-50">Privacy Policy</span></li>
+                            <li><span className="cursor-not-allowed opacity-50">Terms of Service</span></li>
+                            <li><span className="cursor-not-allowed opacity-50">Cookie Policy</span></li>
                         </ul>
                     </div>
                 </div>

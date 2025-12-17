@@ -98,5 +98,6 @@
     --start-left: 50%;
     /* Keep centered on mobile */
     --end-left: 1rem;
+    --end-scale: 0.45;
   }
 }

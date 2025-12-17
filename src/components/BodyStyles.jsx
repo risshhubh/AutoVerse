@@ -117,7 +117,7 @@ const BodyStyles = () => {
 
                         {/* Car Grid Showcase */}
                         {filteredCars.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-2 gap-4 md:gap-8">
                                 {filteredCars.map((car, index) => (
                                     <motion.div
                                         key={car.id}
@@ -128,26 +128,35 @@ const BodyStyles = () => {
                                     >
                                         <Link
                                             to={`/vehicle/${car.id}`}
-                                            className="block group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-pastel-blue/5 h-full"
+                                            className="block group bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-pastel-blue/5 h-full"
                                         >
-                                            <div className="aspect-[16/10] overflow-hidden relative">
+                                            <div className="aspect-[3/4] md:aspect-[16/10] overflow-hidden relative">
                                                 <img
                                                     src={car.image}
                                                     alt={car.name}
                                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 md:opacity-60 group-hover:opacity-80 transition-opacity" />
 
-                                                <div className="absolute bottom-4 left-4 right-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                                    <div className="flex justify-between items-end">
-                                                        <h3 className="text-white font-cinzel text-xl font-bold">{car.name}</h3>
-                                                        <span className="text-white/90 font-mono text-sm bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
-                                                            {car.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 })}
-                                                        </span>
+                                                <div className="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4 translate-y-0 md:translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                                    <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-1">
+                                                        <h3 className="text-white font-cinzel text-sm md:text-xl font-bold truncate leading-tight">{car.name}</h3>
+
+                                                        <div className="flex items-center justify-between md:block mt-1 md:mt-0">
+                                                            <span className="text-white/90 font-mono text-[10px] md:text-sm bg-white/20 backdrop-blur-md px-2 py-1 md:px-3 md:py-1 rounded-full w-fit">
+                                                                {car.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 })}
+                                                            </span>
+                                                            <motion.span
+                                                                className="md:hidden w-6 h-6 flex items-center justify-center bg-pastel-blue text-white rounded-full text-[10px]"
+                                                                whileTap={{ scale: 0.9 }}
+                                                            >
+                                                                ➜
+                                                            </motion.span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="p-6 flex justify-between items-center bg-white/50 relative overflow-hidden">
+                                            <div className="hidden md:flex p-6 justify-between items-center bg-white/50 relative overflow-hidden">
                                                 <div className="absolute inset-0 bg-pastel-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                                 <div className="text-sm font-semibold text-pastel-blue/60 uppercase tracking-wider relative z-10">
                                                     {car.brand}

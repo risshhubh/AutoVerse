@@ -85,8 +85,18 @@ function App() {
         setIsSearchOpen((prev) => !prev);
       }
     };
+
+    const handleOpenSearch = () => {
+      setIsSearchOpen(true);
+    }
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('open-search', handleOpenSearch);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('open-search', handleOpenSearch);
+    };
   }, []);
 
   const handleSelectCarFromSearch = (car) => {
