@@ -165,7 +165,7 @@ const Homepage = () => {
                             autoRotate={true}
                             enableManualRotation={true}
                             autoFrame={true}
-                            autoFrameScale={0.8}
+                            autoFrameScale={1.5}
                             environmentPreset="city"
                             showScreenshotButton={false}
                             modelXOffset={0.2}
