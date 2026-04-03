@@ -153,12 +153,12 @@ function App() {
           socialItems={socialItems}
           displaySocials={true}
           displayItemNumbering={true}
-          menuButtonColor="#DACAA4"
-          openMenuButtonColor="#DACAA4"
+          menuButtonColor="#000000"
+          openMenuButtonColor="#000000"
           changeMenuColorOnOpen={true}
-          colors={['#1B3C53', '#0F2432']}
-          accentColor="#DACAA4"
-          textColor="#DACAA4"
+          colors={['#000000', '#0A0A0A']}
+          accentColor="#94A3B8"
+          textColor="#94A3B8"
         />
 
         <Routes>

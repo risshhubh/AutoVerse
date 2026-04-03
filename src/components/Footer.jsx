@@ -19,7 +19,7 @@ const Footer = () => {
 
 
     return (
-        <footer className="relative bg-[#1B3C53] text-white pt-20 pb-10 overflow-hidden">
+        <footer className="relative bg-[#000000] text-white pt-20 pb-10 overflow-hidden">
             {/* Background Decor */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
                 <h1 className="text-[15rem] md:text-[25rem] font-black font-cinzel leading-none text-white whitespace-nowrap absolute -bottom-20 -left-10 md:left-20 tracking-tighter">
@@ -44,7 +44,7 @@ const Footer = () => {
                                 placeholder="Stay updated..."
                                 className="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-white/30 transition-colors backdrop-blur-sm placeholder-white/30"
                             />
-                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white text-[#1B3C53] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white text-[#000000] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>
                                     <path d="M12 5l7 7-7 7"></path>

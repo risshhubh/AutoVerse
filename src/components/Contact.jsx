@@ -65,7 +65,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="min-h-screen bg-[#0F2432] relative overflow-hidden pt-32 pb-20 px-4 md:px-8 flex flex-col justify-center">
+        <div className="min-h-screen bg-[#18181B] relative overflow-hidden pt-32 pb-20 px-4 md:px-8 flex flex-col justify-center">
             {/* Abstract Dashboard/Cockpit Graphics */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-10 w-96 h-96 border border-pastel-light/5 rounded-full animate-[spin_60s_linear_infinite]" />
@@ -92,9 +92,9 @@ const Contact = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="flex items-center gap-4 mb-8 text-pastel-light/60"
+                        className="flex items-center gap-4 mb-8 text-pastel-sky/60"
                     >
-                        <div className="h-px w-12 bg-pastel-light/40" />
+                        <div className="h-px w-12 bg-pastel-sky/40" />
                         <span className="text-sm tracking-[0.4em] uppercase">Concierge Service</span>
                     </motion.div>
 
@@ -108,32 +108,32 @@ const Contact = () => {
                     </p>
 
                     <div className="space-y-8 font-mono text-sm text-pastel-light/80">
-                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-light transition-colors">
-                            <div className="w-12 h-12 rounded-full border border-pastel-light/20 flex items-center justify-center group-hover:bg-pastel-light/10 transition-colors">
+                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-blue transition-colors">
+                            <div className="w-12 h-12 rounded-full border border-pastel-sky/20 flex items-center justify-center group-hover:bg-pastel-sky/10 transition-colors">
                                 <Phone size={20} />
                             </div>
                             <div>
-                                <p className="text-xs text-pastel-light/40 uppercase tracking-widest mb-1">Direct Line</p>
+                                <p className="text-xs text-pastel-sky/40 uppercase tracking-widest mb-1">Direct Line</p>
                                 <p className="text-lg">+1 (555) 000-AUTO</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-light transition-colors">
-                            <div className="w-12 h-12 rounded-full border border-pastel-light/20 flex items-center justify-center group-hover:bg-pastel-light/10 transition-colors">
+                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-blue transition-colors">
+                            <div className="w-12 h-12 rounded-full border border-pastel-sky/20 flex items-center justify-center group-hover:bg-pastel-sky/10 transition-colors">
                                 <MapPin size={20} />
                             </div>
                             <div>
-                                <p className="text-xs text-pastel-light/40 uppercase tracking-widest mb-1">Headquarters</p>
+                                <p className="text-xs text-pastel-sky/40 uppercase tracking-widest mb-1">Headquarters</p>
                                 <p className="text-lg">1 AutoVerse Blvd, Innovation City</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-light transition-colors">
-                            <div className="w-12 h-12 rounded-full border border-pastel-light/20 flex items-center justify-center group-hover:bg-pastel-light/10 transition-colors">
+                        <div className="flex items-center gap-6 group cursor-pointer hover:text-pastel-blue transition-colors">
+                            <div className="w-12 h-12 rounded-full border border-pastel-sky/20 flex items-center justify-center group-hover:bg-pastel-sky/10 transition-colors">
                                 <Mail size={20} />
                             </div>
                             <div>
-                                <p className="text-xs text-pastel-light/40 uppercase tracking-widest mb-1">Digital Comms</p>
+                                <p className="text-xs text-pastel-sky/40 uppercase tracking-widest mb-1">Digital Comms</p>
                                 <p className="text-lg">concierge@autoverse.com</p>
                             </div>
                         </div>
@@ -150,7 +150,7 @@ const Contact = () => {
                     {/* Form Container */}
                     <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
                         {/* Decorative Scanner Line */}
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pastel-light/50 to-transparent opacity-50 animate-[scan_4s_ease-in-out_infinite]" />
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pastel-blue/50 to-transparent opacity-50 animate-[scan_4s_ease-in-out_infinite]" />
 
                         {!isSuccess ? (
                             <form onSubmit={handleSubmit} className="space-y-10 relative z-10">

@@ -87,7 +87,7 @@
     translate(calc(-50% * (1 - var(--scroll-p))),
       calc(-50% * (1 - var(--scroll-p)))) scale(calc(var(--start-scale) * (1 - var(--scroll-p)) + var(--end-scale) * var(--scroll-p)));
 
-  color: #1B3C53;
+  color: #FFFFFF;
   /* Consistent color */
 }
 

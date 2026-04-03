@@ -57,8 +57,8 @@ const Homepage = () => {
                     style={{
                         y: backgroundY,
                         backgroundImage: `
-              linear-gradient(rgba(27,60,83,0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(27,60,83,0.03) 1px, transparent 1px)
+              linear-gradient(rgba(128,128,128,0.15) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(128,128,128,0.15) 1px, transparent 1px)
             `,
                         backgroundSize: '80px 80px'
                     }}

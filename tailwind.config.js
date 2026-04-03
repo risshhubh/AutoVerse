@@ -6,9 +6,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'pastel-light': '#DACAA4',
-                'pastel-blue': '#1B3C53',
-                'pastel-sky': '#456882',
+                'pastel-light': '#000000',
+                'pastel-blue': '#94A3B8',
+                'pastel-sky': '#3F3F46',
             },
             fontFamily: {
                 cinzel: ['Cinzel', 'serif'],

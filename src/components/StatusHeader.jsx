@@ -25,7 +25,7 @@ const StatusHeader = () => {
     };
 
     return (
-        <header className="absolute top-0 left-0 right-0 z-30 pointer-events-none mix-blend-difference text-pastel-blue dark:text-pastel-light">
+        <header className="absolute top-0 left-0 right-0 z-30 pointer-events-none text-[#94A3B8]">
             {/* Scroll Progress Line */}
             <motion.div
                 className="absolute top-0 left-0 right-0 h-[2px] bg-current origin-left opacity-50"

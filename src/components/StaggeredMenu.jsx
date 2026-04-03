@@ -54,8 +54,18 @@ const StaggeredMenu = ({
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const handleLinkClick = () => {
+    const handleLinkClick = (e, targetHref) => {
         setIsOpen(false);
+        if (targetHref && targetHref.includes('#')) {
+            const [path, hash] = targetHref.split('#');
+            if (path === '/' && window.location.pathname === '/') {
+                e.preventDefault();
+                setTimeout(() => {
+                    const el = document.getElementById(hash);
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        }
     };
 
     const sidebarVariants = {
@@ -92,7 +102,7 @@ const StaggeredMenu = ({
             <button
                 ref={buttonRef}
                 onClick={toggleMenu}
-                className="fixed top-6 z-50 w-16 h-16 rounded-full bg-[#1B3C53] shadow-2xl flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 focus:outline-none group"
+                className="fixed top-6 z-50 w-16 h-16 rounded-full bg-[#94A3B8] shadow-2xl flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 focus:outline-none group"
                 style={{ [position]: '24px' }}
             >
                 <div className="relative w-7 h-5 flex flex-col justify-between items-center overflow-hidden">
@@ -139,7 +149,7 @@ const StaggeredMenu = ({
 
                     <Link
                         to="/wishlist"
-                        onClick={handleLinkClick}
+                        onClick={(e) => handleLinkClick(e, '/wishlist')}
                         className="absolute top-8 left-8 z-50 hover:scale-110 transition-transform text-white/90 hover:text-white"
                         style={{ color: textColor }}
                         aria-label="View Wishlist"
@@ -163,7 +173,7 @@ const StaggeredMenu = ({
                                         <div className="flex items-center justify-between">
                                             <Link
                                                 to={item.link}
-                                                onClick={handleLinkClick}
+                                                onClick={(e) => handleLinkClick(e, item.link)}
                                                 className="flex items-center text-4xl md:text-5xl font-bold tracking-tight hover:opacity-80 transition-all cursor-pointer"
                                                 style={{ color: textColor }}
                                                 aria-label={item.ariaLabel}
@@ -215,7 +225,7 @@ const StaggeredMenu = ({
                                                         >
                                                             <Link
                                                                 to={subItem.link}
-                                                                onClick={handleLinkClick}
+                                                                onClick={(e) => handleLinkClick(e, subItem.link)}
                                                                 className="text-xl md:text-2xl opacity-80 hover:opacity-100 transition-all block py-1"
                                                                 style={{ color: textColor }}
                                                             >

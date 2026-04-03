@@ -22,7 +22,7 @@ const ExperienceSection = () => {
                 style={{ y: gridY }}
                 className="absolute inset-0 opacity-20 pointer-events-none"
             >
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(27,60,83,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(27,60,83,0.1)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(128,128,128,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(128,128,128,0.15)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)]" />
             </motion.div>
 
             {/* Parallax Background Title */}
@@ -89,6 +89,118 @@ const ExperienceSection = () => {
                     ].map((item, i) => (
                         <ExperienceCard key={i} item={item} index={i} />
                     ))}
+                </div>
+                <div className="mt-40 border-t border-pastel-sky/10 pt-32 relative">
+                    {/* Background glow for telemetry */}
+                    <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-pastel-blue/5 blur-[120px] rounded-full pointer-events-none" />
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
+                    >
+                        <h3 className="text-sm tracking-[0.3em] text-pastel-sky uppercase font-mono mb-4">Live Analytics</h3>
+                        <h3 className="text-4xl md:text-5xl font-cinzel font-black text-pastel-blue mb-4">
+                            Performance Telemetry
+                        </h3>
+                        <p className="text-pastel-blue/60 max-w-2xl mx-auto font-mono text-sm leading-relaxed">
+                            A dynamic visualization of AutoVerse's peak engineering capabilities. Tracking simulated real-time data from our flagship models.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        {[
+                            { name: 'Apex-RS', type: 'Track Focused', topSpeed: 215, accel: 2.8, handling: 98, power: 850 },
+                            { name: 'Horizon-EV', type: 'Electric GT', topSpeed: 195, accel: 2.1, handling: 92, power: 1020 },
+                            { name: 'Vanguard-V8', type: 'Grand Tourer', topSpeed: 205, accel: 3.2, handling: 95, power: 720 }
+                        ].map((car, idx) => (
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: idx * 0.2, duration: 0.8 }}
+                                key={idx}
+                                className="bg-pastel-light/10 backdrop-blur-md border border-pastel-sky/20 p-8 rounded-3xl relative overflow-hidden group hover:border-pastel-blue/40 transition-colors duration-500"
+                            >
+                                {/* Scanner line effect */}
+                                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pastel-blue/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 -translate-y-full group-hover:animate-[scan_3s_ease-in-out_infinite]" />
+
+                                <div className="flex justify-between items-start mb-10">
+                                    <div>
+                                        <h4 className="text-2xl font-bold text-pastel-blue font-mono tracking-tight">{car.name}</h4>
+                                        <p className="text-xs text-pastel-sky uppercase tracking-widest mt-2">{car.type}</p>
+                                    </div>
+                                    <div className="w-12 h-12 rounded-full border border-pastel-sky/20 flex items-center justify-center font-mono text-xs text-pastel-blue opacity-50">
+                                        0{idx + 1}
+                                    </div>
+                                </div>
+
+                                <div className="space-y-8">
+                                    {/* Top Speed */}
+                                    <div>
+                                        <div className="flex justify-between text-xs tracking-widest uppercase font-mono text-pastel-blue/60 mb-3">
+                                            <span>Top Speed</span>
+                                            <span className="text-pastel-blue">{car.topSpeed} MPH</span>
+                                        </div>
+                                        <div className="h-1 w-full bg-pastel-sky/10 rounded-full overflow-hidden relative">
+                                            <div className="absolute inset-y-0 left-0 border-r border-pastel-blue/40 z-10 mix-blend-overlay" style={{ left: '25%' }} />
+                                            <div className="absolute inset-y-0 left-0 border-r border-pastel-blue/40 z-10 mix-blend-overlay" style={{ left: '50%' }} />
+                                            <div className="absolute inset-y-0 left-0 border-r border-pastel-blue/40 z-10 mix-blend-overlay" style={{ left: '75%' }} />
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${(car.topSpeed / 250) * 100}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.5, delay: 0.4 + idx * 0.1, ease: "easeOut" }}
+                                                className="h-full bg-pastel-blue relative"
+                                            >
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full blur-[2px]" />
+                                            </motion.div>
+                                        </div>
+                                    </div>
+
+                                    {/* 0-60 MPH */}
+                                    <div>
+                                        <div className="flex justify-between text-xs tracking-widest uppercase font-mono text-pastel-blue/60 mb-3">
+                                            <span>0-60 MPH</span>
+                                            <span className="text-pastel-blue">{car.accel}s</span>
+                                        </div>
+                                        <div className="h-1 w-full bg-pastel-sky/10 rounded-full overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${100 - (car.accel / 5) * 100}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.5, delay: 0.6 + idx * 0.1, ease: "easeOut" }}
+                                                className="h-full bg-pastel-blue relative"
+                                            >
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full blur-[2px]" />
+                                            </motion.div>
+                                        </div>
+                                    </div>
+
+                                    {/* Horsepower */}
+                                    <div>
+                                        <div className="flex justify-between text-xs tracking-widest uppercase font-mono text-pastel-blue/60 mb-3">
+                                            <span>Power</span>
+                                            <span className="text-pastel-blue">{car.power} HP</span>
+                                        </div>
+                                        <div className="h-1 w-full bg-pastel-sky/10 rounded-full overflow-hidden">
+                                            <motion.div
+                                                initial={{ width: 0 }}
+                                                whileInView={{ width: `${(car.power / 1200) * 100}%` }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 1.5, delay: 0.8 + idx * 0.1, ease: "easeOut" }}
+                                                className="h-full bg-pastel-blue relative"
+                                            >
+                                                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white rounded-full blur-[2px]" />
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

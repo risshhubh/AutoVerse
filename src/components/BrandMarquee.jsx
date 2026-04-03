@@ -21,9 +21,7 @@ const brands = [
 const BrandMarquee = () => {
     return (
         <div className="relative w-full py-16 bg-white/50 backdrop-blur-sm border-y border-white/50 overflow-hidden">
-            {/* Gradient Masks */}
-            <div className="absolute top-0 left-0 w-32 h-full z-10 bg-gradient-to-r from-pastel-light to-transparent" />
-            <div className="absolute top-0 right-0 w-32 h-full z-10 bg-gradient-to-l from-pastel-light to-transparent" />
+
 
             <style>{`
                 @keyframes marquee {
